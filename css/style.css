@@ -1,0 +1,441 @@
+/*=============================================================================================================*/
+/* #region RESET */
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.95em;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+  transition: all 0.25s ease;
+}
+
+:focus {
+  outline: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+caption,
+td {
+  font-weight: normal;
+  text-align: left;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: "" "";
+}
+
+/* #endregion */
+/*=============================================================================================================*/
+
+/*=============================================================================================================*/
+/* #region COMMON */
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h2,
+h3 {
+  color: white;
+}
+
+h2 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0.5em 0 0.5em 0;
+}
+
+h3 {
+  font-size: 0.95em;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+  margin-top: 0.75em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  border: 0.1em solid rgb(255, 143, 50);
+  padding: 0.5em 0.5em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+select {
+  height: 2.5em;
+}
+
+input[type="checkbox"] {
+  transform: scale(2);
+}
+
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+input[type="tel"].currency {
+  background: white url("../image/img_rupiah.gif") no-repeat center left;
+  background-size: 20px;
+  padding-left: 2em;
+  text-align: right;
+}
+
+input[type="tel"].currency:disabled {
+  background-color: lightgrey;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border: 0.1em solid rgb(0, 114, 198);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: 0.1em solid black;
+}
+
+input.error,
+select.error,
+textarea.error {
+  background-color: pink;
+  border: 0.1em solid red;
+}
+
+/*not working if combined with above :up*/
+input[type="tel"].currency.error {
+  background-color: pink;
+  border: 0.1em solid red;
+}
+
+/*to prevent "Rp" missing when input has an error*/
+input[type="tel"]:disabled.currency.error {
+  background-color: rgb(233, 202, 207);
+}
+
+.div_notif {
+  display: inline-block; /*use inline-block so the background will fit the content*/
+  font-size: 0.75em;
+  height: 0;
+  padding: 0.25em;
+}
+
+.div_notif.normal {
+  color: white;
+  height: 0;
+}
+
+.div_notif.warning {
+  background: yellow;
+  color: black;
+  height: 1.5em;
+}
+
+.div_notif.error {
+  background: red;
+  color: white;
+  height: 1.5em;
+}
+
+button {
+  border: 0;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  height: 3em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.85em;
+  padding: 0 0.25em 0 0.25em;
+  align-items: center;
+  justify-content: center;
+}
+
+button:disabled {
+  background: gray;
+}
+
+/*orange button*/
+.bt_orange {
+  background: rgb(255, 143, 50);
+}
+
+.bt_orange:focus:enabled,
+.bt_orange:hover:enabled {
+  background: rgb(215, 103, 10);
+}
+
+/*blue button*/
+.bt_blue {
+  background: rgb(0, 114, 198);
+}
+
+.bt_blue:hover:enabled,
+.bt_blue:focus:enabled {
+  background: rgb(0, 94, 178);
+}
+
+/*green button*/
+.bt_green {
+  background: rgb(76, 175, 80);
+}
+
+.bt_green:hover:enabled,
+.bt_green:focus:enabled {
+  background: rgb(27, 94, 32);
+}
+
+/*red button*/
+.bt_red {
+  background: rgb(255, 60, 60);
+}
+
+.bt_red:hover:enabled,
+.bt_red:focus:enabled {
+  background: red;
+}
+
+.bt_orange:active:enabled,
+.bt_blue:active:enabled,
+.bt_green:active:enabled,
+.bt_red:active:enabled {
+  background: black;
+}
+
+button img {
+  height: 30px;
+  margin: auto;
+  display: block;
+}
+
+/* #endregion */
+/*=============================================================================================================*/
+
+/*=============================================================================================================*/
+/* #region MONITORING SCREEN */
+
+.div_monitor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.div_deviceGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.div_deviceHeader {
+  display: flex;
+  flex-direction: row;
+  background: rgb(255, 143, 50);
+  margin: 0.5em 0.05em;
+}
+
+.div_deviceHeader a {
+  margin: 0.25em;
+  padding: 0.5em;
+}
+
+.div_deviceItems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.div_device {
+  display: flex;
+  flex-direction: column;
+  margin: 0.05em;
+  padding: 0.25em;
+  width: calc(50% - 0.1em);
+  cursor: pointer;
+}
+
+.a_title {
+  color: white;
+  font-weight: bold;
+  cursor: default;
+}
+
+.up,
+.a_upCount {
+  background: greenyellow;
+  border: 0.1em solid green;
+}
+
+.down,
+.a_downCount {
+  background: pink;
+  border: 0.1em solid red;
+}
+
+.blind,
+.a_blindCount {
+  background: grey;
+  border: 0.1em solid black;
+  color: white;
+}
+
+#a_add {
+  background: rgb(0, 114, 198);
+  border: 0.1em solid black;
+  padding: 0.1em 0.25em 0 0.25em;
+}
+
+#a_add img {
+  height: 2em;
+}
+
+a:hover,
+#a_add:hover,
+.up:hover,
+.down:hover,
+.blind:hover {
+  background: rgb(255, 143, 50);
+}
+
+@media only screen and (min-width: 500px) {
+  .div_device {
+    width: 15em;
+  }
+}
+
+/* #endregion */
+/*=============================================================================================================*/
+
+/*=============================================================================================================*/
+/* #region FORM */
+
+form {
+  width: 100%;
+  padding: 1em;
+}
+
+#div_id {
+  display: none;
+  visibility: hidden;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  padding: 1em;
+}
+
+.div_field.optional label:after {
+  color: royalblue;
+  content: " (optional)";
+  font-size: 0.75em;
+  font-style: italic;
+}
+
+.div_field.bysystem label:after {
+  color: green;
+  content: " (autogenerated)";
+  font-size: 0.75em;
+  font-style: italic;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+.div_buttonGroup {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+button {
+  flex: 0 1 45%;
+}
+
+.img_label {
+  margin: 0 0.5em 0 0;
+}
+
+button span {
+  font-size: 1.25em;
+}
+
+button span.off {
+  display: none;
+}
+
+.img_label.off {
+  display: none;
+}
+
+.img_spinner.off {
+  display: none;
+}
+
+#bt_toTop {
+  background: rgba(0, 114, 198, 0.5);
+  bottom: 0;
+  display: none;
+  margin: 0 2em 2em 0;
+  position: fixed;
+  right: 0;
+  width: auto;
+  z-index: 6;
+}
+
+#bt_toTop img {
+  height: 25px;
+}
+
+@media only screen and (min-width: 500px) {
+  form {
+    width: 25em;
+    margin: auto;
+  }
+}
+
+/* #endregion */
+/*=============================================================================================================*/
