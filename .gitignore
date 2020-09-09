@@ -52,5 +52,6 @@ nbproject
 .vscode
 *.code-workspace
 
-# Ignore log folder
-Log/
+# Ignore content of log folder
+log/*
+!log/this_folder_is_used_for_collectiong_temporary_ping_result_file
