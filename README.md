@@ -35,7 +35,7 @@ If you are using XAMPP on default folder location ("C:\XAMPP"), you may use thes
 * Create a scheduled task to run "PHPing.bat" file every minute on your environment via Task Scheduler
 * Modify your database connection parameters on "/php/dbconfig.php" file
 * Check the PHPing and php folder path in "PHPing.bat" file and make sure the path is same as your environment
-* Add this 2 line on your "php.ini" file (the configuration file for PHP) to enable command prompt run from inside of PHP file
+* Add this 2 line in your "php.ini" file (the configuration file for PHP) to enable command prompt run from inside of PHP file
 
   [PHP_COM_DOTNET]
   
@@ -43,6 +43,7 @@ If you are using XAMPP on default folder location ("C:\XAMPP"), you may use thes
   
 * Access to http://localhost/phping and add your first IP device there (modify "localhost" with your server name / address and server port (if any))
 * If you want to using Telegram Bot and email notification function, modify the related parameters on "/php/PHPing.php" file
+* If you want to using email notification, since PHPing use default PHP mail() function, you may have to update the mail server configuration in "php.ini" file (the configuration file for PHP) based on your environment, or you may use another library such as PHPMailer etc.
 
 ## How-It-Works
 * Scheduler run PHPing.bat to run PHPing.php every minute
