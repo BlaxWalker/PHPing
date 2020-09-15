@@ -3,6 +3,10 @@ require_once "dbconfig.php";
 
 $loc = realpath(dirname(__FILE__) . "/..");
 $logLoc = $loc . "\\log\\";
+
+// create log folder if not exist yet
+if(!file_exists($logLoc)) {mkdir($logLoc);}
+
 $hourlyMailLog = json_decode(file_get_contents($loc . "\\HourlyMailLog.json"));
 
 define("SEND_TELEGRAM_NOTIFICATION", false); //[MODIFY THIS LINE to send Telegram notification (true)]
